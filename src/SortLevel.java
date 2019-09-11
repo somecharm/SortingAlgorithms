@@ -12,6 +12,15 @@ public class SortLevel {
         return array;
     }
 
+    public static void InsertionSortStep(int[] array, int step, int i) {
+        for (; i < array.length; i += step) {
+            for (int j = i + step; j < array.length; j += step) {
+                if (array[i] > array[j]) {
+                    swap(array, i, j);
+                }
+            }
+        }
+    }
 
     public static boolean BubbleSortStep(int[] array) {
         boolean swaped = false;

@@ -56,4 +56,26 @@ class SortLevelTest {
         assertTrue(SortLevel.BubbleSortStep(array));
         assertArrayEquals(result,array);
     }
+
+    @Test
+    void insertionSortStep() {
+        int[] array = {1,6,5,4,3,2,7};
+        int[] result ={1,3,5,4,6,2,7};
+        SortLevel.InsertionSortStep(array,3,1);
+        assertArrayEquals(result,array);
+    }
+    @Test
+    void insertionSortStep2() {
+        int[] array = {7,6,5,4,3,2,1};
+        int[] result ={1,6,5,4,3,2,7};
+        SortLevel.InsertionSortStep(array,3,0);
+        assertArrayEquals(result,array);
+    }
+    @Test
+    void insertionSortStep3() {
+        int[] array = {1,3,5,4,6,2,7};
+        int[] result ={1,3,2,4,6,5,7};
+        SortLevel.InsertionSortStep(array,3,2);
+        assertArrayEquals(result,array);
+    }
 }
