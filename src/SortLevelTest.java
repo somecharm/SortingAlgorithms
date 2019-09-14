@@ -78,4 +78,18 @@ class SortLevelTest {
         SortLevel.InsertionSortStep(array,3,2);
         assertArrayEquals(result,array);
     }
+
+    @Test
+    void knuthSequence() {
+        System.out.println(SortLevel.KnuthSequence(145));
+    }
+
+    @Test
+    void shellSort() {
+        int[] array = {15,14,8,4,6,2,7,11,9,1,12,10,3,13,5};
+        int[] result ={1,2,3,4,5,6,7,8,9,10,11,12,13,14,15};
+        SortLevel.ShellSort(array);
+        System.out.println(Arrays.toString(array));
+        assertArrayEquals(result,array);
+    }
 }

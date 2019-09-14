@@ -1,15 +1,22 @@
 import java.util.*;
 
 public class SortLevel {
-    public static int[] SelectionSortStep(int[] array, int i) {
-        int min = i;
-        for (int j = i; j < array.length; j++) {
-            if (array[min] > array[j]) {
-                min = j;
+    public static ArrayList<Integer> KnuthSequence(int array_size) {
+        //N(i) = 3 * N(i-1) + 1
+        ArrayList<Integer> sequence = new ArrayList<>();
+        for (int i = 1; i <= array_size; i = 3 * i + 1) {
+            sequence.add(0, i);
+        }
+        return sequence;
+    }
+
+    public static void ShellSort(int[] array) {
+        ArrayList<Integer> sequence = KnuthSequence(array.length);
+        for (int step : sequence) {
+            for (int i = 0; i < step; i++) {
+                InsertionSortStep(array, step, i);
             }
         }
-        swap(array, i, min);
-        return array;
     }
 
     public static void InsertionSortStep(int[] array, int step, int i) {
@@ -20,6 +27,17 @@ public class SortLevel {
                 }
             }
         }
+    }
+
+    public static int[] SelectionSortStep(int[] array, int i) {
+        int min = i;
+        for (int j = i; j < array.length; j++) {
+            if (array[min] > array[j]) {
+                min = j;
+            }
+        }
+        swap(array, i, min);
+        return array;
     }
 
     public static boolean BubbleSortStep(int[] array) {
