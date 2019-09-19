@@ -92,4 +92,13 @@ class SortLevelTest {
         System.out.println(Arrays.toString(array));
         assertArrayEquals(result,array);
     }
+
+    @Test
+    void arrayChunk() {
+        int[] array = {7,5,6,4,3,1,2};
+        int[] result ={2,1,3,4,6,5,7};
+        assertEquals(3,SortLevel.ArrayChunk(array));
+        System.out.println(Arrays.toString(array));
+        assertArrayEquals(result,array);
+    }
 }

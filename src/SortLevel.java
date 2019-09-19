@@ -1,6 +1,28 @@
 import java.util.*;
 
 public class SortLevel {
+    public static int ArrayChunk(int[] M) {
+        int N = M[M.length / 2];
+        int i1 = 0;
+        int i2 = M.length - 1;
+        while (true){
+            if (M[i1] < N) i1++;
+            if (M[i2] > N) i2--;
+            if (i1 == i2 - 1 && M[i1] > M[i2]) {
+                swap(M, i1, i2);
+                 N = M[M.length / 2];
+                 i1 = 0;
+                 i2 = M.length - 1;
+                continue;
+            }
+            if (i1 == i2 || i1 == i2 - 1 && M[i1] < M[i2]){
+                break;
+            }
+            swap(M, i1, i2);
+        }
+        return M.length / 2;
+    }
+
     public static ArrayList<Integer> KnuthSequence(int array_size) {
         //N(i) = 3 * N(i-1) + 1
         ArrayList<Integer> sequence = new ArrayList<>();
