@@ -5,22 +5,21 @@ public class SortLevel {
         int N = M[M.length / 2];
         int i1 = 0;
         int i2 = M.length - 1;
-        while (true){
+        while (true) {
             while (M[i1] < N) i1++;
             while (M[i2] > N) i2--;
             if (i1 == i2 - 1 && M[i1] > M[i2]) {
                 swap(M, i1, i2);
-                 N = M[M.length / 2];
-                 i1 = 0;
-                 i2 = M.length - 1;
+                N = M[M.length / 2];
+                i1 = 0;
+                i2 = M.length - 1;
                 continue;
             }
-            if (i1 == i2 || i1 == i2 - 1 && M[i1] < M[i2]){
-                break;
+            if (i1 == i2 || (i1 == i2 - 1 && M[i1] < M[i2])) {
+                return i1;
             }
             swap(M, i1, i2);
         }
-        return M.length / 2;
     }
 
     public static ArrayList<Integer> KnuthSequence(int array_size) {
