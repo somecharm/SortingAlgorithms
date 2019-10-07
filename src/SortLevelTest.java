@@ -118,7 +118,7 @@ class SortLevelTest {
     void quickSort() {
         int[] array = {1, 3, 4, 6, 5, 2, 8};
         int[] result = {1, 2, 3, 4, 5, 6, 8};
-        SortLevel.QuickSort(array, 0, array.length - 1);
+        SortLevel.QuickSortTailOptimization(array, 0, array.length - 1);
         assertArrayEquals(array, result);
     }
 
@@ -126,7 +126,7 @@ class SortLevelTest {
     void quickSort2() {
         int[] array = {6, 5, 4, 3, 2};
         int[] result = {2, 3, 4, 5, 6};
-        SortLevel.QuickSort(array, 0, array.length - 1);
+        SortLevel.QuickSortTailOptimization(array, 0, array.length - 1);
         assertArrayEquals(array, result);
     }
 
@@ -134,7 +134,8 @@ class SortLevelTest {
     void quickSort3() {
         int[] array = {2, 1, 3, 0, 8, 4, 9, 6, 5, 7};
         int[] result = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
-        SortLevel.QuickSort(array, 0, array.length - 1);
+        SortLevel.QuickSortTailOptimization(array, 0, array.length - 1);
         assertArrayEquals(array, result);
     }
+
 }

@@ -1,6 +1,19 @@
 import java.util.*;
 
 public class SortLevel {
+    public static void QuickSortTailOptimization(int[] array, int left, int right) {
+        while (left < right) {
+            int N = ArrayChunk(array, left, right);
+            if (N - left < right - N) {
+                QuickSortTailOptimization(array, left, N - 1);
+                left = N + 1;
+            } else {
+                QuickSortTailOptimization(array, N + 1, right);
+                right = N - 1;
+            }
+        }
+    }
+
     public static void QuickSort(int[] array, int left, int right) {
         if (left >= right) return;
         int N = ArrayChunk(array, left, right);
