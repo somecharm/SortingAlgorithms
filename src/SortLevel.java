@@ -1,6 +1,23 @@
 import java.util.*;
 
 public class SortLevel {
+    public static ArrayList KthOrderStatisticsStep(int[] Array, int L, int R, int k) {
+        ArrayList<Integer> list = new ArrayList<Integer>();
+        while (true) {
+            int N = ArrayChunk(Array, L, R);
+            if (N < k) {
+                L = N + 1;
+            } else if (N > k) {
+                R = N - 1;
+            } else {
+                list.add(L);
+                list.add(R);
+                break;
+            }
+        }
+        return list;
+    }
+
     public static void QuickSortTailOptimization(int[] array, int left, int right) {
         while (left < right) {
             int N = ArrayChunk(array, left, right);

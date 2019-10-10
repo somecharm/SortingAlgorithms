@@ -138,4 +138,10 @@ class SortLevelTest {
         assertArrayEquals(array, result);
     }
 
+    @Test
+    void kthOrderStatisticsStep() {
+        int[] array = {2, 1, 3, 0, 8, 4, 9, 6, 5, 7};
+        System.out.println(SortLevel.KthOrderStatisticsStep(array, 0, array.length - 1, 5));
+    }
+
 }
