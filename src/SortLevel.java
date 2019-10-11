@@ -4,7 +4,7 @@ public class SortLevel {
     public static ArrayList KthOrderStatisticsStep(int[] Array, int L, int R, int k) {
         ArrayList<Integer> list = new ArrayList<Integer>();
         while (true) {
-            int N = ArrayChunk(Array, L, R);
+            int N = (R + L) / 2;
             if (N < k) {
                 L = N + 1;
             } else if (N > k) {
