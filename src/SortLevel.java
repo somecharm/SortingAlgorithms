@@ -3,18 +3,19 @@ import java.util.*;
 public class SortLevel {
     public static ArrayList KthOrderStatisticsStep(int[] Array, int L, int R, int k) {
         ArrayList<Integer> list = new ArrayList<Integer>();
-        while (true) {
-            int N = (R + L) / 2;
-            if (N < k) {
-                L = N + 1;
-            } else if (N > k) {
-                R = N - 1;
-            } else {
-                list.add(L);
-                list.add(R);
-                break;
-            }
+        int N = ArrayChunk(Array, L, R);
+        if (N == k) {
+            list.add(L);
+            list.add(R);
+            return list;
         }
+        if (N < k) {
+            L = N + 1;
+        } else {
+            R = N - 1;
+        }
+        list.add(L);
+        list.add(R);
         return list;
     }
 
