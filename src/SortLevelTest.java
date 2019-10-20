@@ -1,6 +1,8 @@
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -144,4 +146,9 @@ class SortLevelTest {
         System.out.println(SortLevel.KthOrderStatisticsStep(array, 0, array.length - 1, 5));
     }
 
+    @Test
+    void mergeSort() {
+        Integer[] array = {2, 1, 3, 0, 8, 4, 9, 6, 5, 7};
+        System.out.println(SortLevel.MergeSort(new ArrayList<Integer>(Arrays.asList(array))));
+    }
 }

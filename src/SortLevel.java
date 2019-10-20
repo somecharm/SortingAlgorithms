@@ -1,6 +1,36 @@
 import java.util.*;
 
 public class SortLevel {
+    public static ArrayList<Integer> MergeSort(ArrayList<Integer> array) {
+        if (array.size() <= 1) {
+            return array;
+        }
+        int mid = (array.size()) / 2;
+        ArrayList<Integer> left = new ArrayList<>(array.subList(0, mid));
+        ArrayList<Integer> right = new ArrayList<>(array.subList(mid, array.size()));
+        return Merge(MergeSort(left), MergeSort(right));
+    }
+
+
+    public static ArrayList<Integer> Merge(ArrayList<Integer> left, ArrayList<Integer> right) {
+        ArrayList<Integer> list = new ArrayList<>();
+        while (left.size() > 0 && right.size() > 0) {
+            if (left.get(0) < right.get(0)) {
+                list.add(left.get(0));
+                left.remove(0);
+            } else {
+                list.add(right.get(0));
+                right.remove(0);
+            }
+        }
+        if (left.size() > 0) {
+            list.addAll(left);
+        } else if (right.size() > 0) {
+            list.addAll(right);
+        }
+        return list;
+    }
+
     public static ArrayList KthOrderStatisticsStep(int[] Array, int L, int R, int k) {
         ArrayList<Integer> list = new ArrayList<Integer>();
         int N = ArrayChunk(Array, L, R);
