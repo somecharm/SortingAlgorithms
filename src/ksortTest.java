@@ -9,6 +9,8 @@ class ksortTest {
     @Test
     void index() {
         ksort k = new ksort();
+        assertEquals(0,k.index("a00"));
+        System.out.println(k.index("a00"));
         assertEquals(11,k.index("a11"));
         assertEquals(111,k.index("b11"));
         assertEquals(799,k.index("h99"));

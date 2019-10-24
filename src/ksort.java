@@ -7,8 +7,8 @@ public class ksort {
 
     public int index(String s) {
         char A = s.charAt(0);
-        char M = s.charAt(2);
-        char N = s.charAt(1);
+        char M = s.charAt(1);
+        char N = s.charAt(2);
 
         if (A >= 97 && A <= 104 && M >= 48 && M <= 57 && N >= 48 && N <= 57) {
             return (A - 97) * 100 + (M - 48) * 10 + (N - 48);
