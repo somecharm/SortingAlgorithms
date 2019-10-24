@@ -11,7 +11,7 @@ public class ksort {
         char N = s.charAt(2);
 
         if (A >= 97 && A <= 104 && M >= 48 && M <= 57 && N >= 48 && N <= 57) {
-            return (A - 97) * 100 + (M - 48) * 10 + (N - 48);
+            return (A - 'a') * 100 + (M - '0') * 10 + (N - '0');
         }
         return -1;
     }

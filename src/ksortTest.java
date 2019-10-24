@@ -21,6 +21,7 @@ class ksortTest {
     void add() {
         ksort k = new ksort();
         assertTrue(k.add("a00"));
+        assertTrue(k.add("a01"));
         assertTrue(k.add("a10"));
         assertTrue(k.add("a20"));
         assertFalse(k.add("0jk"));
