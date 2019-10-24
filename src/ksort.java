@@ -6,12 +6,14 @@ public class ksort {
     }
 
     public int index(String s) {
-        char A = s.charAt(0);
-        char M = s.charAt(1);
-        char N = s.charAt(2);
+        if (s.length() == 3) {
+            char A = s.charAt(0);
+            char M = s.charAt(1);
+            char N = s.charAt(2);
 
-        if (A >= 'a' && A <= 'h' && M >= '0' && M <= '9' && N >= '0' && N <= '9') {
-            return (A - 'a') * 100 + (M - '0') * 10 + (N - '0');
+            if (A >= 'a' && A <= 'h' && M >= '0' && M <= '9' && N >= '0' && N <= '9') {
+                return (A - 'a') * 100 + (M - '0') * 10 + (N - '0');
+            }
         }
         return -1;
     }
