@@ -23,8 +23,11 @@ public class BinarySearch {
         } else if (N > array[mid]) {
             Left = mid + 1;
         } else {
+            Left = mid;
+            Right = mid;
             result = 1;
         }
+
     }
 
     int GetResult() {
