@@ -4,7 +4,7 @@ public class GallopingSearch {
     }
 
     public boolean GallopingSearch(int[] array, int N) {
-        if (N > array[array.length - 1]) return false;
+        if (N > array[array.length - 1] || N < array[0]) return false;
         int i = 1;
         int index = (int) Math.pow(2, i) - 2;
         while (array[index] <= N) {
@@ -16,19 +16,17 @@ public class GallopingSearch {
                 index = array.length - 1;
             }
         }
+        BinarySearch binarySearch = new BinarySearch(array);
         if (array[index] > N) {
-            BinarySearch binarySearch = new BinarySearch(array);
+
             binarySearch.Left = (int) (Math.pow(2, i - 1) - 2) + 1;
             binarySearch.Right = index;
             while (binarySearch.GetResult() == 0) {
                 binarySearch.Step(N);
-                if (binarySearch.GetResult() == 1) return true;
-                if (binarySearch.GetResult() == -1) return false;
             }
         }
-        return false;
+        return (binarySearch.GetResult() == 1);
     }
-
 }
 
 class BinarySearch {
